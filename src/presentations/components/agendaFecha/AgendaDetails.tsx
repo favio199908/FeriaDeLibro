@@ -1,22 +1,25 @@
-import { Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 
 import React from "react";
 
-import { Agenda } from "../../../infrastructure/interfaces/api-db.responses";
+import { AgendaF } from "../agenda/AgendaF";
+import { Fecha } from "../../../core/entities/agenda.entity";
 
 interface Props {
-  agenda: Agenda;
+  agen: Fecha[];
 }
 
-export const AgendaDetails = ({ agenda }: Props) => {
+export const AgendaDetails = ({ agen }: Props) => {
   return (
     <>
       <View style={{ marginHorizontal: 20 }}>
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
-          Biografia
-        </Text>
-
-        <Text style={{ fontSize: 16 }}>{agenda.expositor}</Text>
+        <FlatList
+          data={agen}
+          keyExtractor={(item) => item.id.toString()}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => <AgendaF agen={item} />}
+        />
       </View>
 
       <View style={{ marginTop: 10, marginBottom: 50 }}>

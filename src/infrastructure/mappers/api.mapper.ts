@@ -1,5 +1,5 @@
 // Importa las interfaces relevantes desde sus ubicaciones correspondientes en tu proyecto
-import { Agendass, FullAgenda } from "../../core/entities/agenda.entity";
+import { Agendass, Fecha, FullAgenda } from "../../core/entities/agenda.entity";
 import {
   FullParticipante,
   Participante,
@@ -86,27 +86,19 @@ export class ApiMapper {
       mes: agendafechas.mes,
     };
   }
-  static fromAgendaFechasDBToFecha(agenda: AgendaFechaAgenda): FullAgenda {
+  static fromApiDBAgendaToEntity(agenda: Agenda): Fecha {
     return {
+      pabellon: agenda.pabellon,
+      expositor: agenda.expositor,
+      profesion: agenda.profesion,
+      id: agenda.id,
+      titulo: agenda.titulo,
+      hora: agenda.hora,
       fecha: agenda.fecha,
-      agenda: agenda.agenda.map((evento) => ({
-        pabellon: evento.pabellon,
-        expositor: evento.expositor,
-        profesion: evento.profesion,
-        id: evento.id,
-        titulo: evento.titulo,
-        expositor_id: evento.expositor_id,
-        salon_id: evento.salon_id,
-        hora: evento.hora,
-        fecha: evento.fecha,
-        local: evento.local,
-        created_at: evento.created_at,
-        updated_at: evento.updated_at,
-        deleted_at: evento.deleted_at,
-        foto: evento.foto,
-        icono_salon: evento.icono_salon,
-        nacionalidad: evento.nacionalidad,
-      })),
+      local: agenda.local,
+      foto: agenda.foto,
+      icono_salon: agenda.icono_salon,
+      nacionalidad: agenda.nacionalidad,
     };
   }
 }

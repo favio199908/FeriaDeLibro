@@ -10,7 +10,7 @@ export interface Participante {
   telefono2: null | string; // Teléfono secundario del participante (puede ser una cadena de caracteres o null)
   fecha_nacimiento: null | string; // Fecha de nacimiento del participante (puede ser una cadena de caracteres o null)
   tipo: null | string; // Tipo de participante (puede ser una cadena de caracteres o null)
-  foto: null | string; // URL de la foto del participante (puede ser una cadena de caracteres o null)
+  foto: string; // URL de la foto del participante (puede ser una cadena de caracteres o null)
   biografia: null | string; // Biografía del participante (puede ser una cadena de caracteres o null)
 }
 

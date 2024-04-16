@@ -14,21 +14,13 @@ interface Props extends StackScreenProps<RootStackParams, "DetailsFecha"> {}
 export const AgendaFechaDetailsScreen = ({ route }: Props) => {
   // Extrae el participanteId de los parámetros de la ruta
   const { Fecha } = route.params;
-  const { agenda, isLoading } = useAgend(Fecha);
+  const { cast } = useAgend(Fecha);
 
   // Renderiza la pantalla de detalles del participante
   return (
     <ScrollView>
       <AgendaHeader fecha={Fecha} />
-      <AgendaDetails agenda={agenda} />
-
-      
-      <Text>Fecha: {Fecha}</Text>
-      <FlatList data={agenda}
-      renderItem={({item})=> <DiaryItem name={item.expositor} } />
-
-
-      <Text>Agenda: {JSON.stringify(agenda)}</Text>
+      <AgendaDetails agen={cast} />
     </ScrollView>
   );
 };

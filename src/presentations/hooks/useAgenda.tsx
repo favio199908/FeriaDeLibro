@@ -38,6 +38,7 @@ export const useAgenda = () => {
 
     // Indica que la carga ha finalizado
     setIsLoading(false);
+    console.log({ agendaApi });
   };
 
   // Retorna el estado de carga y la lista de participantes

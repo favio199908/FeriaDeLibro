@@ -6,4 +6,4 @@ export * from "./api/get-by-id.use-case";
 
 export * from "./apis/agendaFechas.use-case";
 
-export * from "./api/get-by-fecha.use-case";
+export * from "./api/get-by-agendasFechas.use-case";

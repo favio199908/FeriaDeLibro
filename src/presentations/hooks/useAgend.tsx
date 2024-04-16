@@ -1,56 +1,37 @@
-// Importa los hooks useEffect y useState de react
 import { useEffect, useState } from "react";
 
-// Importa todos los casos de uso desde el directorio core/use-cases
 import * as UseCases from "../../../src/core/use-cases";
 
-// Importa el fetcher de la API desde el adaptador apiDB.adapters del directorio config/adapters
 import { apiDBFetcher } from "../../config/adapters/apiDB.adapters";
-import { FullAgenda } from "../../core/entities/agenda.entity";
 
-// Define el hook useAp que maneja la lógica para cargar un participante específico
+import { Agenda } from "../../infrastructure/interfaces/api-db.responses";
+import { Fecha } from "../../core/entities/agenda.entity";
+
 export const useAgend = (fecha: string) => {
-  // Define el estado isLoading para indicar si se está cargando el participante
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Define el estado participante para almacenar la información del participante cargado
-  const [agenda, setagenda] = useState<FullAgenda>();
+  const [cast, setCast] = useState<Fecha[]>();
 
-  // Efecto para cargar el participante cuando cambia el ID del participante
   useEffect(() => {
-    loadAp();
+    loadMovie();
   }, [fecha]);
 
-  // Función asincrónica para cargar el participante
-  const loadAp = async () => {
-    // Indica que se está cargando el participante
-    console.log("Cargando agenda...");
+  const loadMovie = async () => {
+    setIsLoading(true);
 
-    // Utiliza el caso de uso getFechaByFechaUseCase para obtener la agenda por su fecha
-    try {
-      const fullAgenda = await UseCases.getFechaByFechaUseCase(
-        apiDBFetcher, // Utiliza el fetcher de la API
-        fecha // Fecha de la agenda a cargar
-      );
+    const castPromise = UseCases.getAgendaByFechaUseCase(apiDBFetcher, fecha);
 
-      // Almacena la agenda cargada en el estado
-      setagenda(fullAgenda);
+    const [cast] = await Promise.all([castPromise]);
 
-      // Indica que se ha completado la carga de la agenda
-      console.log("Agenda cargada exitosamente.");
+    setCast(cast);
 
-      // Imprime en la consola la agenda cargada (solo para propósitos de depuración)
-      console.log({ fullAgenda });
-    } catch (error) {
-      // Captura cualquier error que ocurra durante la solicitud y lo lanza como una nueva instancia de Error
-      console.error(`Error al cargar la agenda para la fecha: ${fecha}`, error);
-      throw new Error(`Cannot load agenda for fecha: ${fecha}`);
-    }
-
-    // Indica que se ha completado la carga de la agenda
-    console.log("Fin de la carga de la agenda.");
+    setIsLoading(false);
+    console.log({ cast });
   };
 
-  // Retorna el estado de carga y la información de la agenda
-  return { isLoading, agenda };
+  return {
+    isLoading,
+
+    cast,
+  };
 };

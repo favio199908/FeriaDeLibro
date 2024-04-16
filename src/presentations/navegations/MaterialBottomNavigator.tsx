@@ -6,6 +6,7 @@ import { Ionicons } from "../components/shared/Ionicons";
 import { Navigation } from "./Navegations";
 import { AgendaFechaDetailsScreen } from "../screen/agenda/fechas/AgendaFechaDetailsScreen";
 import { AgendaFechaFechasScreen } from "../screen/agenda/AgendaFechasScreen";
+import { SearchScreen } from "../screen/search/SearchScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -39,12 +40,12 @@ export const MaterialBottomNavigator = () => {
       />
 
       <Tab.Screen
-        name="Settings"
+        name="Search"
         options={{
-          title: "SETTINGS",
-          tabBarIcon: ({ color }) => <Ionicons name="settings-outline" />,
+          title: "SEARCH",
+          tabBarIcon: ({ color }) => <Ionicons name="search-outline" />,
         }}
-        component={AgendaFechaDetailsScreen} // Cambiado a AgendaFechaDetailsScreen
+        component={SearchScreen}
       />
     </Tab.Navigator>
   );

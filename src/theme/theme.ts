@@ -12,6 +12,10 @@ export const globalColors = {
 };
 
 export const globalStyles = StyleSheet.create({
+  globalmargin: {
+    marginHorizontal: 20,
+  },
+
   container: {
     flex: 1,
     padding: 20,
