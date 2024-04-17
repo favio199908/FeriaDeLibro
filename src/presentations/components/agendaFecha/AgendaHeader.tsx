@@ -8,6 +8,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { globalColors, globalStyles } from "../../../theme/theme";
 
 // Define una interfaz Props para especificar las propiedades esperadas por el componente
 interface Props {
@@ -23,20 +24,8 @@ export const AgendaHeader = ({ fecha }: Props) => {
 
   return (
     <>
-      {/* Contenedor del encabezado de la imagen del participante */}
-      <View style={{ ...styles.imageContainer, height: screenHeight * 0.7 }}>
-        {/* Borde de la imagen */}
-        <View style={styles.imageBorder}></View>
-      </View>
-      {/* Contenedor del texto y botón de regreso */}
-      <View style={styles.marginContainer}>
-        <Text style={styles.title}>{fecha}</Text>
-      </View>
-      {/* Botón de regreso */}
-      <View style={styles.backButton}>
-        <Pressable onPress={() => navigation.goBack()}>
-          <Text style={styles.backButtonText}>Regresar</Text>
-        </Pressable>
+      <View>
+        <Text style={styles.title}>Para la fecha : {fecha}</Text>
       </View>
     </>
   );

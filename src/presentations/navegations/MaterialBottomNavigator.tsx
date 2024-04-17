@@ -15,9 +15,9 @@ export const MaterialBottomNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Casa"
+        name="Home"
         options={{
-          title: "HOME",
+          title: "INICIO",
           tabBarIcon: ({ color }) => <Ionicons name="home-outline" />,
         }}
         component={Navigation}
@@ -25,18 +25,18 @@ export const MaterialBottomNavigator = () => {
       <Tab.Screen
         name="Events"
         options={{
-          title: "EVENTS",
+          title: "EVENTOS",
           tabBarIcon: ({ color }) => <Ionicons name="calendar-outline" />,
         }}
         component={AgendaFechaFechasScreen} // Cambiado a AgendaFechaDetailsScreen
       />
       <Tab.Screen
-        name="Books"
+        name="Pabellone"
         options={{
-          title: "BOOKS",
-          tabBarIcon: ({ color }) => <Ionicons name="library-outline" />,
+          title: "PABELLONES",
+          tabBarIcon: ({ color }) => <Ionicons name="walk-outline" />,
         }}
-        component={AgendaFechaDetailsScreen} // Cambiado a AgendaFechaDetailsScreen
+        component={AgendaFechaFechasScreen} // Cambiado a AgendaFechaDetailsScreen
       />
 
       <Tab.Screen

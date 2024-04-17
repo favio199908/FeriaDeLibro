@@ -28,9 +28,6 @@ export const AgendaF = ({ agen }: Props) => {
         <Text style={{ fontSize: 12, opacity: 0.7 }}>{agen.nacionalidad}</Text>
         <Text>Pabellon</Text>
         <Text style={{ fontSize: 12, opacity: 0.7 }}>{agen.pabellon}</Text>
-
-        <Text>Local</Text>
-        <Text style={{ fontSize: 12, opacity: 0.7 }}>{agen.local}</Text>
       </View>
     </View>
   );
@@ -41,6 +38,7 @@ const styles = StyleSheet.create({
     marginRight: 100,
     marginLeft: 5,
     marginTop: 50,
+    marginBottom: 50,
     display: "flex",
     flexDirection: "row",
   },

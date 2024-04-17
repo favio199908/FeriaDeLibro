@@ -8,7 +8,7 @@ import { AgendaFechaDetailsScreen } from "../screen/agenda/fechas/AgendaFechaDet
 
 // Define el tipo de parámetros de la pila de navegación
 export type RootStackParams = {
-  Home: undefined; // La pantalla Home no toma ningún parámetro
+  Inicio: undefined; // La pantalla Home no toma ningún parámetro
   Details: { participanteId: number }; // La pantalla Details toma un parámetro participanteId de tipo number
   DetailsFecha: { Fecha: string };
 };
@@ -21,26 +21,20 @@ export const Navigation = () => {
   return (
     // Renderiza la pila de navegación con dos pantallas: Home y Details
     <MyStack.Navigator>
-      <MyStack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          headerStyle: {
-            backgroundColor: "#008DDA", // Color de fondo del encabezado
-          },
-          contentStyle: {
-            backgroundColor: "#F0F0F0", // Color de fondo del contenido
-          },
-          headerTintColor: "#FFFFFF", // Color del texto del encabezado (blanco)
-        }}
-      />
+      <MyStack.Screen name="Inicio" component={HomeScreen} />
       {/* Pantalla Home */}
-      <MyStack.Screen name="Details" component={DetailsScreen} />
+      <MyStack.Screen
+        name="Details"
+        options={{ title: "Detalles de un Participante" }}
+        component={DetailsScreen}
+      />
       {/* Pantalla Details */}
       <MyStack.Screen
         name="DetailsFecha"
+        options={{ title: "Eventos" }}
         component={AgendaFechaDetailsScreen}
       />
+
       {/* Pantalla Details */}
     </MyStack.Navigator>
   );

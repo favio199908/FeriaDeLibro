@@ -76,7 +76,7 @@ export const HorizontalCarrusel = ({ agenda, nombre, loadNextPage }: Props) => {
         data={agenda} // Lista de participantes
         renderItem={(
           { item } // Renderiza cada participante utilizando el componente ParticipantePoster
-        ) => <AgendaFechasPoster agenda={item} width={140} height={200} />}
+        ) => <AgendaFechasPoster agenda={item} width={150} height={250} />}
         keyExtractor={(item, index) => `${item.fecha_completa}-${index}`} // Función para generar claves únicas para los elementos de la lista
         horizontal // Establece el carrusel en dirección horizontal
         showsHorizontalScrollIndicator={false} // Oculta la barra de desplazamiento horizontal

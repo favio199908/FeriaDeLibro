@@ -6,6 +6,7 @@ import { useAgend } from "../../../hooks/useAgend";
 import { AgendaHeader } from "../../../components/agendaFecha/AgendaHeader";
 import { AgendaDetails } from "../../../components/agendaFecha/AgendaDetails";
 import DiaryItem from "./DiaryItem";
+import { globalStyles } from "../../../../theme/theme";
 
 // Define la interfaz Props que extiende StackScreenProps con los parámetros de la pantalla Details
 interface Props extends StackScreenProps<RootStackParams, "DetailsFecha"> {}
@@ -18,8 +19,11 @@ export const AgendaFechaDetailsScreen = ({ route }: Props) => {
 
   // Renderiza la pantalla de detalles del participante
   return (
-    <View>
-      <AgendaDetails agen={cast} />
+    <View style={globalStyles.container}>
+      <View style={globalStyles.contentContainer}>
+        <AgendaHeader fecha={Fecha} />
+        <AgendaDetails agen={cast} />
+      </View>
     </View>
   );
 };
