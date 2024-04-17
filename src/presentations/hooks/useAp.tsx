@@ -39,9 +39,6 @@ export const useAp = (participanteId: number) => {
 
     // Indica que se ha completado la carga del participante
     setisLoading(false);
-
-    // Imprime en la consola el participante cargado (solo para propósitos de depuración)
-    console.log({ fullParticipante });
   };
 
   // Retorna el estado de carga y la información del participante

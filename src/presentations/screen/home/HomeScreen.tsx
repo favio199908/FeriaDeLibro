@@ -7,6 +7,7 @@ import { FullScreenLoader } from "../../components/loaders/FullScreenLoader";
 import { PosterCarusel } from "../../components/participantes/PosterCarrusel";
 import { HorizontalCarrusel } from "../../components/participantes/HorizontalCarrusel";
 import { APosterCarusel } from "../../components/agendaFechas/APosterCarrusel";
+import { globalStyles } from "../../../theme/theme";
 
 export const HomeScreen = () => {
   const { top } = useSafeAreaInsets();
@@ -18,8 +19,8 @@ export const HomeScreen = () => {
   }
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={[styles.contentContainer, { marginTop: top + 20 }]}>
+    <ScrollView style={globalStyles.container}>
+      <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
         <PosterCarusel participantes={paricipante} />
         <HorizontalCarrusel participante={paricipante} nombre="PARTICIPANTES" />
         <APosterCarusel agendas={agenda} />
@@ -27,14 +28,3 @@ export const HomeScreen = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#F0F0F0", // Color de fondo de la pantalla principal
-  },
-  contentContainer: {
-    paddingBottom: 30,
-    paddingHorizontal: 10,
-  },
-});

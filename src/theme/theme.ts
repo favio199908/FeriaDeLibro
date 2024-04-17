@@ -18,7 +18,7 @@ export const globalStyles = StyleSheet.create({
 
   container: {
     flex: 1,
-    padding: 20,
+    padding: 5,
     backgroundColor: globalColors.background,
   },
   primaryButton: {
@@ -32,5 +32,9 @@ export const globalStyles = StyleSheet.create({
   buttonText: {
     color: globalColors.background,
     fontSize: 18,
+  },
+  contentContainer: {
+    paddingBottom: 30,
+    paddingHorizontal: 10,
   },
 });

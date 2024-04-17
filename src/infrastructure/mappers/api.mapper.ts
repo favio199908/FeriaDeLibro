@@ -86,19 +86,4 @@ export class ApiMapper {
       mes: agendafechas.mes,
     };
   }
-  static fromApiDBAgendaToEntity(agenda: Agenda): Fecha {
-    return {
-      pabellon: agenda.pabellon,
-      expositor: agenda.expositor,
-      profesion: agenda.profesion,
-      id: agenda.id,
-      titulo: agenda.titulo,
-      hora: agenda.hora,
-      fecha: agenda.fecha,
-      local: agenda.local,
-      foto: agenda.foto,
-      icono_salon: agenda.icono_salon,
-      nacionalidad: agenda.nacionalidad,
-    };
-  }
 }

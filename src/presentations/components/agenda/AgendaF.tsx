@@ -11,17 +11,6 @@ export const AgendaF = ({ agen }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Text
-        style={{
-          fontSize: 15,
-          fontWeight: "bold",
-          marginLeft: 28,
-          marginTop: 4,
-        }}
-      >
-        Evento
-      </Text>
-
       <Image
         source={{ uri: agen.foto }}
         style={{ width: 100, height: 150, borderRadius: 10 }}
@@ -49,11 +38,11 @@ export const AgendaF = ({ agen }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginRight: 20,
-    paddingLeft: 5,
+    marginRight: 100,
+    marginLeft: 5,
+    marginTop: 50,
     display: "flex",
-    flexDirection: "column",
-    width: 100,
+    flexDirection: "row",
   },
   actorInfo: {
     marginLeft: 10,

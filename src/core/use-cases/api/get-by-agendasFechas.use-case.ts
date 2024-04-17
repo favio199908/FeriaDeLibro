@@ -3,7 +3,7 @@ import {
   Agenda,
   AgendaFechaAgenda,
 } from "../../../infrastructure/interfaces/api-db.responses";
-import { ApiMapper } from "../../../infrastructure/mappers/api.mapper";
+
 import { fechaMapper } from "../../../infrastructure/mappers/fecha.mapper";
 import { Fecha, FullAgenda } from "../../entities/agenda.entity";
 

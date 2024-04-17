@@ -1,7 +1,7 @@
 import React from "react";
 import { StackScreenProps } from "@react-navigation/stack";
 import { RootStackParams } from "../../../navegations/Navegations";
-import { FlatList, ScrollView, Text } from "react-native";
+import { FlatList, ScrollView, Text, View } from "react-native";
 import { useAgend } from "../../../hooks/useAgend";
 import { AgendaHeader } from "../../../components/agendaFecha/AgendaHeader";
 import { AgendaDetails } from "../../../components/agendaFecha/AgendaDetails";
@@ -18,9 +18,8 @@ export const AgendaFechaDetailsScreen = ({ route }: Props) => {
 
   // Renderiza la pantalla de detalles del participante
   return (
-    <ScrollView>
-      <AgendaHeader fecha={Fecha} />
+    <View>
       <AgendaDetails agen={cast} />
-    </ScrollView>
+    </View>
   );
 };

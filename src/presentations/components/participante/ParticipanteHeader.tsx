@@ -47,12 +47,6 @@ export const ParticipanteHeader = ({ foto, nombre, profesion }: Props) => {
         {/* Profesión del participante (si está disponible) */}
         <Text style={styles.title}>{profesion}</Text>
       </View>
-      {/* Botón de regreso */}
-      <View style={styles.backButton}>
-        <Pressable onPress={() => navigation.goBack()}>
-          <Text style={styles.backButtonText}>Regresar</Text>
-        </Pressable>
-      </View>
     </>
   );
 };
@@ -68,7 +62,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.24,
     shadowRadius: 7,
-    elevation: 9,
+    elevation: 0,
     borderBottomEndRadius: 25,
     borderBottomStartRadius: 25,
   },

@@ -4,7 +4,6 @@ import * as UseCases from "../../../src/core/use-cases";
 
 import { apiDBFetcher } from "../../config/adapters/apiDB.adapters";
 
-import { Agenda } from "../../infrastructure/interfaces/api-db.responses";
 import { Fecha } from "../../core/entities/agenda.entity";
 
 export const useAgend = (fecha: string) => {
@@ -26,7 +25,6 @@ export const useAgend = (fecha: string) => {
     setCast(cast);
 
     setIsLoading(false);
-    console.log({ cast });
   };
 
   return {
