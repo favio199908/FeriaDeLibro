@@ -4,7 +4,7 @@ import { TextInput, Text } from "react-native-paper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { globalStyles } from "../../../theme/theme";
 import { FlatList } from "react-native";
-import { PosterCarusel } from "../../components/participantes/PosterCarrusel";
+
 import { useApi } from "../../hooks/useApi";
 import { BuscarPosterParticipante } from "./BuscarPosterParticipante";
 

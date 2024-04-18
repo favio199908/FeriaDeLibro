@@ -57,20 +57,6 @@ export const HorizontalCarrusel = ({ agenda, nombre, loadNextPage }: Props) => {
   // Retorna la estructura del carrusel horizontal
   return (
     <View style={{ height: nombre ? 260 : 220 }}>
-      {/* Si se proporciona un nombre, mostrarlo como título */}
-      {nombre && (
-        <Text
-          style={{
-            fontSize: 30,
-            fontWeight: "300",
-            marginLeft: 10,
-            marginBottom: 10,
-          }}
-        >
-          {nombre}
-        </Text>
-      )}
-
       {/* FlatList que muestra los participantes en un carrusel horizontal */}
       <FlatList
         data={agenda} // Lista de participantes

@@ -22,9 +22,6 @@ export const apiParticipanteUseCase = async (
   options?: Options // Opciones para la solicitud (opcional)
 ): Promise<Participante[]> => {
   try {
-    // Imprime en la consola el número de página especificado en las opciones, o el valor predeterminado de 1 si no se especifica ninguna página
-    console.log({ page: options?.page ?? 1 });
-
     // Realiza una solicitud GET al endpoint de participante con las opciones proporcionadas
     const participante = await fetcher.get<ParticipanteResponses[]>(
       "/participante",

@@ -1,11 +1,8 @@
 import { HttpAdapter } from "../../../config/adapters/http/http.adapter";
-import {
-  Agenda,
-  AgendaFechaAgenda,
-} from "../../../infrastructure/interfaces/api-db.responses";
+import { AgendaFechaAgenda } from "../../../infrastructure/interfaces/api-db.responses";
 
 import { fechaMapper } from "../../../infrastructure/mappers/fecha.mapper";
-import { Fecha, FullAgenda } from "../../entities/agenda.entity";
+import { Fecha } from "../../entities/agenda.entity";
 
 export const getAgendaByFechaUseCase = async (
   fetcher: HttpAdapter,
@@ -17,6 +14,7 @@ export const getAgendaByFechaUseCase = async (
     );
 
     const fecha = agenda.map(fechaMapper.fromMovieDBCastToEntity);
+
     return fecha;
   } catch (error) {
     console.log(error);

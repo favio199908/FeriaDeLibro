@@ -24,7 +24,7 @@ export const getParticipanteByIdUseCase = async (
     // Mapea el participante obtenido de la base de datos a un objeto FullParticipante utilizando el mapeador de API
     const fullParticipante =
       ApiMapper.fromParticipanteDBToParticipanteID(participante);
-
+    console.log({ fullParticipante });
     // Devuelve el participante mapeado
     return fullParticipante;
   } catch (error) {

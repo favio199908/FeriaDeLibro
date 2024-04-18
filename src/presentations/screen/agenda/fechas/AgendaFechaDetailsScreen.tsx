@@ -5,7 +5,7 @@ import { FlatList, ScrollView, Text, View } from "react-native";
 import { useAgend } from "../../../hooks/useAgend";
 import { AgendaHeader } from "../../../components/agendaFecha/AgendaHeader";
 import { AgendaDetails } from "../../../components/agendaFecha/AgendaDetails";
-import DiaryItem from "./DiaryItem";
+
 import { globalStyles } from "../../../../theme/theme";
 
 // Define la interfaz Props que extiende StackScreenProps con los parámetros de la pantalla Details

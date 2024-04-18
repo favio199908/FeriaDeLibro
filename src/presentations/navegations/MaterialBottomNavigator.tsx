@@ -7,6 +7,7 @@ import { Navigation } from "./Navegations";
 import { AgendaFechaDetailsScreen } from "../screen/agenda/fechas/AgendaFechaDetailsScreen";
 import { AgendaFechaFechasScreen } from "../screen/agenda/AgendaFechasScreen";
 import { SearchScreen } from "../screen/search/SearchScreen";
+import { PabellonesScreen } from "../screen/pabellones/PabellonesScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -31,12 +32,12 @@ export const MaterialBottomNavigator = () => {
         component={AgendaFechaFechasScreen} // Cambiado a AgendaFechaDetailsScreen
       />
       <Tab.Screen
-        name="Pabellone"
+        name="Pabellones"
         options={{
           title: "PABELLONES",
           tabBarIcon: ({ color }) => <Ionicons name="walk-outline" />,
         }}
-        component={AgendaFechaFechasScreen} // Cambiado a AgendaFechaDetailsScreen
+        component={PabellonesScreen} // Cambiado a AgendaFechaDetailsScreen
       />
 
       <Tab.Screen
