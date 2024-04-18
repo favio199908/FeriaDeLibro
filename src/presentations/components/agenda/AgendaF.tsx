@@ -7,8 +7,6 @@ interface Props {
 }
 
 export const AgendaF = ({ agen }: Props) => {
-  console.log("Datos recibidos en AgendaF:", agen); // Agregar consola de registro aquí
-
   return (
     <View style={styles.container}>
       <Image

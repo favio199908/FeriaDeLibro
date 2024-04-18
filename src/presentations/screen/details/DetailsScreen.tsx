@@ -24,7 +24,6 @@ interface Props extends StackScreenProps<RootStackParams, "Details"> {}
 export const DetailsScreen = ({ route }: Props) => {
   // Extrae el participanteId de los parámetros de la ruta
   const { participanteId } = route.params;
-  console.log({ participanteId });
 
   // Utiliza el custom hook useAp para obtener la información del participante
   const { isLoading, participante } = useAp(participanteId);
