@@ -11,14 +11,15 @@ import { RootStackParams } from "../../navegations/Navegations";
 import { useAp } from "../../hooks/useAp";
 
 // Importa ScrollView desde "react-native" para permitir el desplazamiento vertical
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 
 // Importa ParticipanteDetails y ParticipanteHeader desde sus respectivas ubicaciones
 import { ParticipanteDetails } from "../../components/participante/ParticipanteDetails";
 import { ParticipanteHeader } from "../../components/participante/ParticipanteHeader";
+import { globalStyles } from '../../../theme/theme';
 
 // Define la interfaz Props que extiende StackScreenProps con los parámetros de la pantalla Details
-interface Props extends StackScreenProps<RootStackParams, "Details"> {}
+interface Props extends StackScreenProps<RootStackParams, "Details"> { }
 
 // Define el componente DetailsScreen
 export const DetailsScreen = ({ route }: Props) => {
@@ -36,14 +37,17 @@ export const DetailsScreen = ({ route }: Props) => {
   // Renderiza la pantalla de detalles del participante
   return (
     <ScrollView>
-      {/* Renderiza el encabezado del participante */}
-      <ParticipanteHeader
-        foto={participante!.foto}
-        nombre={participante!.nombre}
-        profesion={participante!.profesion}
-      />
-      {/* Renderiza los detalles del participante */}
-      <ParticipanteDetails participante={participante!} />
+      <View style={globalStyles.container}>
+        {/* Renderiza el encabezado del participante */}
+        <ParticipanteHeader
+          foto={participante!.foto}
+          nombre={participante!.nombre}
+          profesion={participante!.profesion}
+
+        />
+        {/* Renderiza los detalles del participante */}
+        <ParticipanteDetails participante={participante!} />
+      </View>
     </ScrollView>
   );
 };

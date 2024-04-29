@@ -4,22 +4,29 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 // Importa los componentes necesarios desde react-native
 import { Ionicons } from "../components/shared/Ionicons";
 import { Navigation } from "./Navegations";
-import { AgendaFechaDetailsScreen } from "../screen/agenda/fechas/AgendaFechaDetailsScreen";
 import { AgendaFechaFechasScreen } from "../screen/agenda/AgendaFechasScreen";
 import { SearchScreen } from "../screen/search/SearchScreen";
 import { PabellonesScreen } from "../screen/pabellones/PabellonesScreen";
+
 
 const Tab = createMaterialBottomTabNavigator();
 
 // Define el componente MaterialBottomNavigator que contiene la navegación mediante pestañas
 export const MaterialBottomNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator // Aquí puedes definir opciones de estilo para la barra de pestañas
+      // Por ejemplo, puedes cambiar el color de fondo de la barra de pestañas
+      barStyle={{ backgroundColor: "#20448C" }}
+      activeColor="#F2A71B"
+      inactiveColor="#F2F2F2"
+
+    >
       <Tab.Screen
         name="Home"
         options={{
           title: "INICIO",
-          tabBarIcon: ({ color }) => <Ionicons name="home-outline" />,
+
+          tabBarIcon: ({ color }) => <Ionicons name="home-outline" color="#1261A6" />,
         }}
         component={Navigation}
       />
@@ -27,7 +34,7 @@ export const MaterialBottomNavigator = () => {
         name="Events"
         options={{
           title: "EVENTOS",
-          tabBarIcon: ({ color }) => <Ionicons name="calendar-outline" />,
+          tabBarIcon: ({ color }) => <Ionicons name="calendar-outline" color="#1261A6" />,
         }}
         component={AgendaFechaFechasScreen} // Cambiado a AgendaFechaDetailsScreen
       />
@@ -35,7 +42,7 @@ export const MaterialBottomNavigator = () => {
         name="Pabellones"
         options={{
           title: "PABELLONES",
-          tabBarIcon: ({ color }) => <Ionicons name="walk-outline" />,
+          tabBarIcon: ({ color }) => <Ionicons name="walk-outline" color="#1261A6" />,
         }}
         component={PabellonesScreen} // Cambiado a AgendaFechaDetailsScreen
       />
@@ -43,11 +50,12 @@ export const MaterialBottomNavigator = () => {
       <Tab.Screen
         name="Search"
         options={{
-          title: "SEARCH",
-          tabBarIcon: ({ color }) => <Ionicons name="search-outline" />,
+          title: "BUSCAR PARTICIPANTE",
+          tabBarIcon: ({ color }) => <Ionicons name="search-outline" color="#1261A6" />,
         }}
         component={SearchScreen}
       />
+
     </Tab.Navigator>
   );
 };

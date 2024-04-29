@@ -57,24 +57,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: {
-    borderRadius: 18,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.24,
-    shadowRadius: 7,
-    elevation: 1,
     marginRight: 10,
   },
   image: {
-    width: 60,
-    height: 60,
-    borderRadius: 18,
+
+    alignItems: "center",
+    justifyContent: "center",
+    width: 70,
+    height: 70,
+    borderRadius: 40,
+    backgroundColor: "lightgray", // Puedes cambiar el color del círculo aquí
+    marginBottom: 10,
   },
   name: {
     fontSize: 12,
     fontWeight: "bold",
+    color: "#F2A71B",
   },
 });

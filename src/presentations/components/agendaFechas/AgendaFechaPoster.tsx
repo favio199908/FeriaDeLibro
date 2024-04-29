@@ -12,8 +12,8 @@ interface Props {
 
 export const AgendaFechasPoster = ({
   agenda,
-  height = 420,
-  width = 300,
+  height = 150,
+  width = 100,
 }: Props) => {
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
@@ -26,7 +26,7 @@ export const AgendaFechasPoster = ({
         width,
         height,
         marginHorizontal: 5,
-        paddingBottom: 20,
+        paddingBottom: 1,
         paddingHorizontal: 5,
         opacity: pressed ? 0.9 : 1,
       })}
@@ -50,14 +50,14 @@ export const AgendaFechasPoster = ({
 const styles = StyleSheet.create({
   image: {
     color: "white",
-    fontSize: 250, // Tamaño grande para resaltar el mes
+    fontSize: 78, // Tamaño grande para resaltar el mes
     fontWeight: "bold", // Negrita para mayor énfasis
     textAlign: "center", // Centra el texto horizontalmente
     marginBottom: 5, // Espacio entre el mes y la fecha
   },
   imagecontainer: {
     flex: 1,
-    borderRadius: 30,
+    borderRadius: 10,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -92,19 +92,19 @@ const styles = StyleSheet.create({
   },
   monthText: {
     color: "white",
-    fontSize: 24, // Tamaño grande para resaltar el mes
+    fontSize: 5, // Tamaño grande para resaltar el mes
     fontWeight: "bold", // Negrita para mayor énfasis
     textAlign: "center", // Centra el texto horizontalmente
     marginBottom: 5, // Espacio entre el mes y la fecha
   },
   dateText: {
     color: "white",
-    fontSize: 16,
+    fontSize: 5,
     textAlign: "center", // Centra el texto horizontalmente
   },
   fullDateText: {
     color: "white",
-    fontSize: 14,
+    fontSize: 5,
     textAlign: "center", // Centra el texto horizontalmente
   },
 });

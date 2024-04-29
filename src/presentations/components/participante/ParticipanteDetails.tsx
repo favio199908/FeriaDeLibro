@@ -17,56 +17,51 @@ export const ParticipanteDetails = ({ participante }: Props) => {
       {/* Contenedor principal con margen horizontal de 20 */}
       <View style={{ marginHorizontal: 20 }}>
         {/* Título "Nacionalidad" con estilo */}
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold", color: "#F2A71B" }}>
           Nacionalidad
         </Text>
         {/* Texto que muestra la nacionalidad del participante */}
-        <Text style={{ marginLeft: 5 }}>{participante.nacionalidad}</Text>
+        <Text style={{ marginLeft: 5, color: "#F2F2F2" }}>{participante.nacionalidad}</Text>
         {/* Título "Ciudad" con estilo */}
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold", color: "#F2A71B" }}>
           Ciudad
         </Text>
         {/* Texto que muestra la ciudad del participante */}
-        <Text style={{ marginLeft: 5 }}>{participante.ciudad}</Text>
+        <Text style={{ marginLeft: 5, color: "#F2F2F2" }}>{participante.ciudad}</Text>
         {/* Título "Radicatoria" con estilo */}
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold", color: "#F2A71B" }}>
           Radicatoria
         </Text>
         {/* Texto que muestra la radicatoria del participante */}
-        <Text style={{ marginLeft: 5 }}>{participante.radicatoria}</Text>
+        <Text style={{ marginLeft: 5, color: "#F2F2F2" }}>{participante.radicatoria}</Text>
         {/* Título "Celular" con estilo */}
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
-          Celular
-        </Text>
+
         {/* Contenedor para mostrar el celular del participante en una fila */}
-        <View style={{ flexDirection: "row" }}>
-          {/* Texto que muestra el celular del participante */}
-          <Text>{participante.telefono1}</Text>
-        </View>
+
         {/* Título "Fecha De Nacimiento" con estilo */}
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold", color: "#F2A71B" }}>
           Fecha De Nacimiento
         </Text>
         {/* Texto que muestra la fecha de nacimiento del participante */}
-        <Text style={{ marginLeft: 5 }}>{participante.fecha_nacimiento}</Text>
+        <Text style={{ marginLeft: 5, color: "#F2F2F2" }}>{participante.fecha_nacimiento}</Text>
         {/* Título "Biografia" con estilo */}
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold", color: "#F2A71B" }}>
           Biografia
         </Text>
         {/* Texto que muestra la biografía del participante */}
-        <Text style={{ fontSize: 16 }}>{participante.biografia}</Text>
+        <Text style={{ fontSize: 16, color: "#F2F2F2" }}>{participante.biografia}</Text>
         {/* Título "Salon" con estilo */}
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold", color: "#F2A71B" }}>
           Salon
         </Text>
         {/* Texto que muestra los salones del participante */}
-        <Text style={{ fontSize: 16 }}>{participante.salones}</Text>
+        <Text style={{ fontSize: 16, color: "#F2F2F2" }}>{participante.salones}</Text>
         {/* Título "Pabellon" con estilo */}
-        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold", color: "#F2A71B" }}>
           Pabellon
         </Text>
         {/* Texto que muestra los pabellones del participante */}
-        <Text style={{ fontSize: 16 }}>{participante.pabellones}</Text>
+        <Text style={{ fontSize: 16, color: "#F2F2F2" }}>{participante.pabellones}</Text>
       </View>
       {/* Espacio en blanco en la parte inferior */}
       <View style={{ marginTop: 10, marginBottom: 50 }}>

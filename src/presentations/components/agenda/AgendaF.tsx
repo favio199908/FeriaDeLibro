@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 
 import { Fecha } from "../../../core/entities/agenda.entity";
+import { globalStyles } from '../../../theme/theme';
 
 interface Props {
   agen: Fecha;
@@ -11,21 +12,17 @@ export const AgendaF = ({ agen }: Props) => {
     <View style={styles.container}>
       <Image
         source={{ uri: agen.foto }}
-        style={{ width: 100, height: 150, borderRadius: 10 }}
+        style={styles.iconContainer}
       />
 
-      <View style={styles.actorInfo}>
-        <Text style={{ fontSize: 15, fontWeight: "bold" }}>{agen.titulo}</Text>
-        <Text>Hora</Text>
-        <Text style={{ fontSize: 12, opacity: 0.7 }}>{agen.hora}</Text>
-        <Text>Expositor</Text>
-        <Text style={{ fontSize: 12, opacity: 0.7 }}>{agen.expositor}</Text>
-        <Text>Profecion</Text>
-        <Text style={{ fontSize: 12, opacity: 0.7 }}>{agen.profesion}</Text>
-        <Text>Nacionalidad</Text>
-        <Text style={{ fontSize: 12, opacity: 0.7 }}>{agen.nacionalidad}</Text>
-        <Text>Pabellon</Text>
-        <Text style={{ fontSize: 12, opacity: 0.7 }}>{agen.pabellon}</Text>
+      <View style={globalStyles.primaryButton}>
+        <Text style={{ fontSize: 15, fontWeight: "500", color: "#262223" }}>{agen.titulo}</Text>
+        <Text style={{ fontSize: 15, fontWeight: "500", color: "#262223" }}>Hora</Text>
+        <Text style={{ fontSize: 12, opacity: 0.7, color: "#262223" }}>{agen.hora}</Text>
+        <Text style={{ fontSize: 15, fontWeight: "500", color: "#262223" }}>Expositor</Text>
+        <Text style={{ fontSize: 12, opacity: 0.7, color: "#262223" }}>{agen.expositor}</Text>
+        <Text style={{ fontSize: 15, fontWeight: "500", color: "#262223" }}>Salon</Text>
+        <Text style={{ fontSize: 12, opacity: 0.7, color: "#262223" }}>{agen.pabellon}</Text>
       </View>
     </View>
   );
@@ -40,8 +37,19 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
   },
-  actorInfo: {
-    marginLeft: 10,
-    marginTop: 4,
+  iconContainer: {
+    // Ancho del contenedor del icono
+    aspectRatio: 1, // Relación de aspecto 1:1 para mantener los íconos cuadrados
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 10, // Espacio entre los íconos
+    backgroundColor: "#F2A71B",
+
+
+    width: 70,
+    height: 70,
+    borderRadius: 40,
+
   },
+
 });

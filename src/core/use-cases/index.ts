@@ -8,3 +8,4 @@ export * from "./apis/agendaFechas.use-case";
 
 export * from "./api/get-by-agendasFechas.use-case";
 export * from "./api/get-by-AgendaSalones.use-case";
+export * from "./apis/expocitor.use-case";
