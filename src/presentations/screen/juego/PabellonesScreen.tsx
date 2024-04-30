@@ -1,27 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Button, ScrollView, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { RouteProp, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../types'; // Asegúrate de importar el tipo de las rutas si lo tienes definido
-import 'react-native-gesture-handler';
+import { RootStackParams } from '../../navegations/Navegations';
+import { RouteProp } from '@react-navigation/native';
 
-type Pabellon = {
-    id: number;
-    desbloqueado: boolean;
-    frase: string;
-    imagen: number;
-};
-
-type PabellonesScreenRouteProp = RouteProp<RootStackParamList, 'Pabellones'>;
-type PabellonesScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Pabellones'>;
-
-type Props = {
-    route: PabellonesScreenRouteProp;
-    navigation: PabellonesScreenNavigationProp;
-};
-
-const PABELLONES_INICIALES: Pabellon[] = [
+const PABELLONES_INICIALES = [
     { id: 1, desbloqueado: false, frase: "Frase del pabellón 1", imagen: require('./img/brasil.png') },
     { id: 2, desbloqueado: false, frase: "Frase del pabellón 2", imagen: require('./img/brasil.png') },
     { id: 3, desbloqueado: false, frase: "Frase del pabellón 3", imagen: require('./img/brasil.png') },
@@ -29,6 +13,13 @@ const PABELLONES_INICIALES: Pabellon[] = [
     { id: 5, desbloqueado: false, frase: "Frase del pabellón 5", imagen: require('./img/brasil.png') },
     { id: 6, desbloqueado: false, frase: "Frase del pabellón 6", imagen: require('./img/brasil.png') },
 ];
+
+type Pabellon = {
+    id: number;
+    desbloqueado: boolean;
+    frase: string;
+    imagen: any;
+};
 
 const PabellonComponent = ({ id, desbloqueado, frase, imagen }: Pabellon) => (
     <View style={styles.pabellon}>
@@ -38,7 +29,15 @@ const PabellonComponent = ({ id, desbloqueado, frase, imagen }: Pabellon) => (
     </View>
 );
 
-export default function PabellonesScreen({ navigation, route }: Props) {
+type NavigationProp = StackNavigationProp<RootStackParams, 'PabellonesScreen'>;
+
+
+type Props = {
+    navigation: NavigationProp;
+
+};
+
+export default function PabellonesScreens({ navigation }: Props) {
     const [pabellones, setPabellones] = useState<Pabellon[]>([]);
 
     useEffect(() => {
@@ -57,10 +56,11 @@ export default function PabellonesScreen({ navigation, route }: Props) {
         };
 
         loadPabellones();
-    }, [route.params?.pabellones]);
+    }, [pabellones]);
 
     const desbloquearPabellon = () => {
-        navigation.navigate('Camera', { pabellones });
+        const pabellonesDesbloqueados = pabellones.filter(pabellon => pabellon.desbloqueado);
+        navigation.navigate('Camera');
     };
 
     return (
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         backgroundColor: '#fff',
-        width: '45%', // Adjust the width as needed
+        width: '45%',
         alignItems: 'center',
     },
     title: {

@@ -48,31 +48,31 @@ export const HomeScreen = () => {
             </Pressable>
             <Pressable onPress={() => navigation.navigate("Mapa")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
-                <Ionicons name="location-outline" size={50} color="black" />
+                <Ionicons name="location-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Mapa Feria De Libro</Text>
             </Pressable>
             <Pressable onPress={() => handleIconPress("map-outline")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
-                <Ionicons name="map-outline" size={30} color="black" />
+                <Ionicons name="cash-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Patrocinador</Text>
             </Pressable>
-            <Pressable onPress={() => handleIconPress("map-outline")} style={globalStyles.iconContainer}>
+            <Pressable onPress={() => handleIconPress("bulb-outline")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
-                <Ionicons name="map-outline" size={30} color="black" />
+                <Ionicons name="bulb-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Organizan</Text>
             </Pressable>
             <Pressable onPress={() => navigation.navigate("Mapa")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
-                <Ionicons name="map-outline" size={30} color="black" />
+                <Ionicons name="fast-food-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Auspician</Text>
             </Pressable>
             <Pressable onPress={() => handleIconPress("map-outline")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
-                <Ionicons name="map-outline" size={30} color="black" />
+                <Ionicons name="star-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Invitado De Honor</Text>
             </Pressable>
@@ -84,11 +84,31 @@ export const HomeScreen = () => {
               </View>
               <Text style={globalStyles.buttonText}>Expositores</Text>
             </Pressable>
-            <Pressable onPress={() => handleIconPress("map-outline")} style={globalStyles.iconContainer}>
+            <Pressable onPress={() => navigation.navigate("PabellonesScreen")
+
+            } style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
                 <Ionicons name="game-controller-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Juego</Text>
+            </Pressable>
+            <Pressable onPress={() => navigation.navigate("SalonesPorFecha")
+
+            } style={globalStyles.iconContainer}>
+              <View style={globalStyles.iconCircle}>
+                <Ionicons name="business-outline" size={30} color="black" />
+
+              </View>
+              <Text style={globalStyles.buttonText}>Buscar Salones</Text>
+            </Pressable>
+            <Pressable onPress={() => navigation.navigate("Salones")
+
+            } style={globalStyles.iconContainer}>
+              <View style={globalStyles.iconCircle}>
+                <Ionicons name="business-outline" size={30} color="black" />
+
+              </View>
+              <Text style={globalStyles.buttonText}>Salones</Text>
             </Pressable>
           </View>
         </ScrollView>

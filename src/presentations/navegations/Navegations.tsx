@@ -9,8 +9,16 @@ import { globalStyles } from '../../theme/theme';
 import { ColombiaScreen } from '../screen/colombia/ColombiaScreen';
 import { MunicipioScreen } from "../screen/municipio/MunicipoScreen";
 import { MapaScreen } from "../screen/mapa/MapaScreen";
-import { AgendaFechaFechasScreen } from "../screen/agenda/AgendaFechasScreen";
+
 import { ExpositorScreen } from "../screen/expositor/ExpositorScreen";
+
+import CameraScreen from "../screen/juego/CameraScreen";
+
+import PabellonesScreens from "../screen/juego/PabellonesScreen";
+import { SalonesScreen } from "../screen/salones/SalonesScreen";
+import SalonComponent from "../screen/todosLosSalones/TodoSalones";
+import TodoPabellones from "../screen/todoLosPabellones/TodoPabellones";
+
 
 // Define el tipo de parámetros de la pila de navegación
 export type RootStackParams = {
@@ -22,6 +30,10 @@ export type RootStackParams = {
   Municipio: undefined;
   Expositores: undefined;
   Mapa: undefined;
+  PabellonesScreen: undefined;
+  Camera: undefined;
+  SalonesPorFecha: undefined;
+  Salones: undefined;
 };
 
 // Crea una nueva pila de navegación con los parámetros RootStackParams
@@ -41,7 +53,7 @@ export const Navigation = () => {
       },
     }} >
       <MyStack.Screen name="Inicio" component={HomeScreen} />
-      {/* Pantalla Home */}
+
 
       <MyStack.Screen
         name="Details"
@@ -74,6 +86,28 @@ export const Navigation = () => {
         options={{ title: "Expositores" }}
         component={ExpositorScreen}
       />
+      <MyStack.Screen
+        name="PabellonesScreen"
+        options={{ title: "Pabellones" }}
+        component={PabellonesScreens}
+      />
+      <MyStack.Screen
+        name="Camera"
+        options={{ title: "camara" }}
+        component={CameraScreen}
+      />
+      <MyStack.Screen
+        name="SalonesPorFecha"
+        options={{ title: "Buscar Salones" }}
+        component={SalonesScreen}
+      />
+      <MyStack.Screen
+        name="Salones"
+        options={{ title: "Salones" }}
+        component={SalonComponent}
+      />
+
+
 
 
       {/* Pantalla Details */}

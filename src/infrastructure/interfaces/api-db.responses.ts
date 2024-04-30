@@ -1,3 +1,49 @@
+export interface ExpositorParaSalonResponse {
+  id: number;
+  nombre: string;
+  profesion: null;
+  nacionalidad: null;
+  ciudad: null;
+  radicatoria: null;
+  telefono1: null;
+  telefono2: null;
+  fecha_nacimiento: null;
+  tipo: null;
+  foto: string;
+  biografia: null;
+  created_at: Date;
+  updated_at: Date;
+  deleted_at: null;
+  salones: Salone[];
+}
+
+export interface Salone {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  imagen: string;
+  plano: string;
+  icono: null;
+  tipo: string;
+  latitud: string;
+  longitud: string;
+  created_at: Date;
+  updated_at: Date;
+  deleted_at: null;
+  pivot: Pivot;
+}
+
+export interface Pivot {
+  expositor_id: number;
+  salon_id: number;
+  titulo: null;
+  fecha: null;
+  hora: null;
+  local: string;
+  created_at: Date;
+  updated_at: Date;
+}
+
 export interface ExpositorResponse {
   id: number;
   nombre: string;
