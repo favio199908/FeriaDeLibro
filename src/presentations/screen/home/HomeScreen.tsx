@@ -52,25 +52,25 @@ export const HomeScreen = () => {
               </View>
               <Text style={globalStyles.buttonText}>Mapa Feria De Libro</Text>
             </Pressable>
-            <Pressable onPress={() => handleIconPress("map-outline")} style={globalStyles.iconContainer}>
+            <Pressable onPress={() => navigation.navigate("Patrocinador")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
                 <Ionicons name="cash-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Patrocinador</Text>
             </Pressable>
-            <Pressable onPress={() => handleIconPress("bulb-outline")} style={globalStyles.iconContainer}>
+            <Pressable onPress={() => navigation.navigate("Organizan")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
                 <Ionicons name="bulb-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Organizan</Text>
             </Pressable>
-            <Pressable onPress={() => navigation.navigate("Mapa")} style={globalStyles.iconContainer}>
+            <Pressable onPress={() => navigation.navigate("Auspician")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
                 <Ionicons name="fast-food-outline" size={30} color="black" />
               </View>
               <Text style={globalStyles.buttonText}>Auspician</Text>
             </Pressable>
-            <Pressable onPress={() => handleIconPress("map-outline")} style={globalStyles.iconContainer}>
+            <Pressable onPress={() => navigation.navigate("InvitadoHonor")} style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
                 <Ionicons name="star-outline" size={30} color="black" />
               </View>
@@ -84,7 +84,7 @@ export const HomeScreen = () => {
               </View>
               <Text style={globalStyles.buttonText}>Expositores</Text>
             </Pressable>
-            <Pressable onPress={() => navigation.navigate("PabellonesScreen")
+            <Pressable onPress={() => navigation.navigate("Pabellones")
 
             } style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>

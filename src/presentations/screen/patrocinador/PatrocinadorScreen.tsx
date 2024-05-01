@@ -5,15 +5,17 @@ import { useAgenda } from "../../hooks/useAgenda";
 import { FullScreenLoader } from "../../components/loaders/FullScreenLoader";
 import { useApi } from "../../hooks/useApi";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { HorizontalCarrusel } from "../../components/agendaFechas/HorizontalCarrusel";
+
 import { globalStyles } from "../../../theme/theme";
 
-export const ColombiaScreen = () => {
+import { useExpositor } from "../../hooks/useExpositor";
+
+export const PatrocinadorScreen = () => {
     const { top } = useSafeAreaInsets();
-    const { agenda } = useAgenda();
+    const { expositor } = useExpositor();
 
     // Define el componente DetailsScreen
-    const { isLoading, paricipante } = useApi();
+    const { isLoading } = useApi();
 
     if (isLoading) {
         return <FullScreenLoader />;
@@ -23,7 +25,8 @@ export const ColombiaScreen = () => {
     return (
         <ScrollView style={globalStyles.container}>
             <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
-                <Text>Pais Invitado</Text>
+                <Text> Patrocinador</Text>
+
             </View>
         </ScrollView>
     );

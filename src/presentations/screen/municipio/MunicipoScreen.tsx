@@ -23,8 +23,7 @@ export const MunicipioScreen = () => {
     return (
         <ScrollView style={globalStyles.container}>
             <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
-                <APosterCarusel agendas={agenda} />
-                <HorizontalCarrusel agenda={agenda} />
+                <Text>Municipio Invitado</Text>
             </View>
         </ScrollView>
     );

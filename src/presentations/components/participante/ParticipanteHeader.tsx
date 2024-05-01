@@ -35,7 +35,7 @@ export const ParticipanteHeader = ({ foto, nombre, profesion }: Props) => {
             source={{
               uri: foto
                 ? foto
-                : "http://feria.programatupotencial.com/Logotipos/user.png",
+                : "https://feriasc.programatupotencial.com/Logotipos/user.png",
             }}
           />
         </View>

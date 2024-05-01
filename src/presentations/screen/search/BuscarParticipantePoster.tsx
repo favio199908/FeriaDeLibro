@@ -38,7 +38,7 @@ export const BuscarParticipantePoster = ({
             source={{
               uri: participante.foto
                 ? participante.foto
-                : "http://feria.programatupotencial.com/Logotipos/user.png",
+                : "https://feriasc.programatupotencial.com/Logotipos/user.png",
             }}
           />
         </View>

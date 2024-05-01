@@ -23,8 +23,7 @@ export const MapaScreen = () => {
     return (
         <ScrollView style={globalStyles.container}>
             <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
-                <APosterCarusel agendas={agenda} />
-                <HorizontalCarrusel agenda={agenda} />
+                <Text>mapa</Text>
             </View>
         </ScrollView>
     );

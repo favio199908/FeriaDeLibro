@@ -26,9 +26,10 @@ export const MaterialBottomNavigator = () => {
       <Tab.Screen
         name="Home"
         options={{
-          title: "INICIO",
-
-          tabBarIcon: ({ color }) => <Ionicons name="home-outline" color="#1261A6" />,
+          title: 'INICIO',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name="home-outline" color={focused ? '#F2A71B' : '#F2F2F2'} />
+          ),
         }}
         component={Navigation}
       />
@@ -36,7 +37,9 @@ export const MaterialBottomNavigator = () => {
         name="Events"
         options={{
           title: "EVENTOS",
-          tabBarIcon: ({ color }) => <Ionicons name="calendar-outline" color="#1261A6" />,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name="calendar-outline" color={focused ? '#F2A71B' : '#F2F2F2'} />
+          ),
         }}
         component={AgendaFechaFechasScreen} // Cambiado a AgendaFechaDetailsScreen
       />
@@ -44,7 +47,9 @@ export const MaterialBottomNavigator = () => {
         name="Pabellones"
         options={{
           title: "PABELLONES",
-          tabBarIcon: ({ color }) => <Ionicons name="walk-outline" color="#1261A6" />,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name="walk-outline" color={focused ? '#F2A71B' : '#F2F2F2'} />
+          ),
         }}
         component={NavegacionPabellones} // Cambiado a AgendaFechaDetailsScreen
       />
@@ -53,7 +58,9 @@ export const MaterialBottomNavigator = () => {
         name="Search"
         options={{
           title: "BUSCAR",
-          tabBarIcon: ({ color }) => <Ionicons name="search-outline" color="#1261A6" />,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name="search-outline" color={focused ? '#F2A71B' : '#F2F2F2'} />
+          ),
         }}
         component={SearchScreen}
       />

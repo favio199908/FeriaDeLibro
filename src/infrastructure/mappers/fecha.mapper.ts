@@ -7,9 +7,9 @@ export class fechaMapper {
 
     // Construye la URL de la foto del participante
     if (agenda.foto === null) {
-      fotoUrl = "http://feria.programatupotencial.com/Logotipos/user.png";
+      fotoUrl = "https://feriasc.programatupotencial.com/Logotipos/user.png";
     } else {
-      fotoUrl = `http://feria.programatupotencial.com/images/${agenda.foto}`;
+      fotoUrl = `https://feriasc.programatupotencial.com/images/${agenda.foto}`;
     }
 
     return {

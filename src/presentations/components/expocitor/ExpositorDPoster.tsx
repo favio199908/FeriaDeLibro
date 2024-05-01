@@ -40,7 +40,7 @@ export const ExpositorDPoster = ({
                         source={{
                             uri: agenda.foto
                                 ? agenda.foto
-                                : "http://feria.programatupotencial.com/Logotipos/user.png",
+                                : "https://feriasc.programatupotencial.com/Logotipos/user.png",
                         }}
                     />
                 </View>

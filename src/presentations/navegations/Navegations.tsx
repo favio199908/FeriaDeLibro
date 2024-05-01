@@ -5,19 +5,25 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomeScreen } from "../screen/home/HomeScreen";
 import { DetailsScreen } from "../screen/details/DetailsScreen";
 import { AgendaFechaDetailsScreen } from "../screen/agenda/fechas/AgendaFechaDetailsScreen";
-import { globalStyles } from '../../theme/theme';
+
 import { ColombiaScreen } from '../screen/colombia/ColombiaScreen';
 import { MunicipioScreen } from "../screen/municipio/MunicipoScreen";
 import { MapaScreen } from "../screen/mapa/MapaScreen";
 
 import { ExpositorScreen } from "../screen/expositor/ExpositorScreen";
 
-import CameraScreen from "../screen/juego/CameraScreen";
 
-import PabellonesScreens from "../screen/juego/PabellonesScreen";
+
 import { SalonesScreen } from "../screen/salones/SalonesScreen";
 import SalonComponent from "../screen/todosLosSalones/TodoSalones";
-import TodoPabellones from "../screen/todoLosPabellones/TodoPabellones";
+
+
+import PabellonesScreen from "../screen/juego/PabellonScreen";
+import CameraScreen from "../screen/juego/CameraScreen";
+import { PatrocinadorScreen } from "../screen/patrocinador/PatrocinadorScreen";
+import { AuspicianScreen } from "../screen/auspician/AuspicianScreen";
+import { OrganizanScreen } from "../screen/organizan/OrganizanScreen";
+import { InvitadoDeHonorScreen } from "../screen/invitadoDeHonor/InvitadoDeHonorScreen";
 
 
 // Define el tipo de parámetros de la pila de navegación
@@ -30,10 +36,14 @@ export type RootStackParams = {
   Municipio: undefined;
   Expositores: undefined;
   Mapa: undefined;
-  PabellonesScreen: undefined;
-  Camera: undefined;
+  Pabellones: undefined;
+  Camera: { Pabellones }
   SalonesPorFecha: undefined;
   Salones: undefined;
+  Patrocinador: undefined;
+  Auspician: undefined;
+  Organizan: undefined;
+  InvitadoHonor: undefined;
 };
 
 // Crea una nueva pila de navegación con los parámetros RootStackParams
@@ -87,15 +97,16 @@ export const Navigation = () => {
         component={ExpositorScreen}
       />
       <MyStack.Screen
-        name="PabellonesScreen"
+        name="Pabellones"
         options={{ title: "Pabellones" }}
-        component={PabellonesScreens}
+        component={PabellonesScreen}
       />
       <MyStack.Screen
         name="Camera"
         options={{ title: "camara" }}
         component={CameraScreen}
       />
+
       <MyStack.Screen
         name="SalonesPorFecha"
         options={{ title: "Buscar Salones" }}
@@ -106,7 +117,30 @@ export const Navigation = () => {
         options={{ title: "Salones" }}
         component={SalonComponent}
       />
+      <MyStack.Screen
+        name="Patrocinador"
+        options={{ title: "Patrocinador" }}
+        component={PatrocinadorScreen}
+      />
 
+      <MyStack.Screen
+        name="Auspician"
+        options={{ title: "Auspician" }}
+        component={AuspicianScreen}
+      />
+
+
+      <MyStack.Screen
+        name="Organizan"
+        options={{ title: "Organizan" }}
+        component={OrganizanScreen}
+      />
+
+      <MyStack.Screen
+        name="InvitadoHonor"
+        options={{ title: "Invitado De Honor" }}
+        component={InvitadoDeHonorScreen}
+      />
 
 
 

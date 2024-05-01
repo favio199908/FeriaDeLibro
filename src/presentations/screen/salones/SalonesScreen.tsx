@@ -16,7 +16,7 @@ export const SalonesScreen = () => {
     useEffect(() => {
         if (!fecha || !id) return;
         setIsLoading(true);
-        const apiUrl = `http://feria.programatupotencial.com/api/agendaferia/agendafechasalon/${fecha}/${id}`;
+        const apiUrl = `https://feriasc.programatupotencial.com/api/agendaferia/agendafechasalon/${fecha}/${id}`;
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {

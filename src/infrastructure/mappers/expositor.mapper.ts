@@ -8,9 +8,9 @@ export class expositorMapper {
 
     // Construye la URL de la foto del participante
     if (expositorR.foto === null) {
-      fotoUrl = "http://feria.programatupotencial.com/Logotipos/user.png";
+      fotoUrl = "https://feriasc.programatupotencial.com/Logotipos/user.png";
     } else {
-      fotoUrl = `http://feria.programatupotencial.com/images/${expositorR.foto}`;
+      fotoUrl = `https://feriasc.programatupotencial.com/images/${expositorR.foto}`;
     }
 
     // Retorna un objeto Participante con los datos mapeados desde el objeto ParticipanteResponses

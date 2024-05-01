@@ -45,7 +45,7 @@ export const PabellonesScreen = () => {
 
     try {
       const response = await fetch(
-        `http://feria.programatupotencial.com/api/agendaferia/agendafechasalon/${fecha}/${id}`
+        `https://feriasc.programatupotencial.com/api/agendaferia/agendafechasalon/${fecha}/${id}`
       );
       const data = await response.json();
       setResultado(JSON.stringify(data));

@@ -21,7 +21,7 @@ const TodoPabellones = () => {
     useEffect(() => {
         const fetchSalones = async () => {
             try {
-                const response = await axios.get<Salon[]>("http://feria.programatupotencial.com/api/salon/pabellones");
+                const response = await axios.get<Salon[]>("https://feriasc.programatupotencial.com/api/salon/pabellones");
                 setSalones(response.data);
             } catch (error) {
                 console.error("Error al obtener los datos:", error);
@@ -44,8 +44,8 @@ const TodoPabellones = () => {
                                 style={styles.images}
                                 source={{
                                     uri: salon.imagen
-                                        ? `http://feria.programatupotencial.com/images/${salon.imagen}`
-                                        : "http://feria.programatupotencial.com/Logotipos/user.png",
+                                        ? `https://feriasc.programatupotencial.com/images/${salon.imagen}`
+                                        : "https://feriasc.programatupotencial.com/Logotipos/user.png",
                                 }}
                             />
                         </View>
@@ -55,8 +55,8 @@ const TodoPabellones = () => {
                                 style={styles.images}
                                 source={{
                                     uri: salon.plano
-                                        ? `http://feria.programatupotencial.com/images/${salon.plano}`
-                                        : "http://feria.programatupotencial.com/Logotipos/user.png",
+                                        ? `https://feriasc.programatupotencial.com/images/${salon.plano}`
+                                        : "https://feriasc.programatupotencial.com/Logotipos/user.png",
                                 }}
                             />
                         </View>

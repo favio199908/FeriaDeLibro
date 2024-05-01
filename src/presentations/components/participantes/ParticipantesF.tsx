@@ -8,9 +8,9 @@ interface Props {
 }
 
 export const ParticipanteF = ({ parti }: Props) => {
-  const baseUrl = "http://feria.programatupotencial.com/images/";
+  const baseUrl = "https://feriasc.programatupotencial.com/images/";
   const defaultImageUrl =
-    "http://feria.programatupotencial.com/Logotipos/user.png";
+    "https://feriasc.programatupotencial.com/Logotipos/user.png";
   const imageUrl = parti.foto ? baseUrl + parti.foto : defaultImageUrl;
 
   return (

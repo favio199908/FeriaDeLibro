@@ -22,9 +22,9 @@ export class ApiMapper {
 
     // Construye la URL de la foto del participante
     if (participanteResponse.foto === null) {
-      fotoUrl = "http://feria.programatupotencial.com/Logotipos/user.png";
+      fotoUrl = "https://feriasc.programatupotencial.com/Logotipos/user.png";
     } else {
-      fotoUrl = `http://feria.programatupotencial.com/images/${participanteResponse.foto}`;
+      fotoUrl = `https://feriasc.programatupotencial.com/images/${participanteResponse.foto}`;
     }
 
     // Retorna un objeto Participante con los datos mapeados desde el objeto ParticipanteResponses
@@ -52,9 +52,9 @@ export class ApiMapper {
 
     // Construye la URL de la foto del participante
     if (ParticipanteID.foto === null) {
-      fotoUrl = "http://feria.programatupotencial.com/Logotipos/user.png";
+      fotoUrl = "https://feriasc.programatupotencial.com/Logotipos/user.png";
     } else {
-      fotoUrl = `http://feria.programatupotencial.com/images/${ParticipanteID.foto}`;
+      fotoUrl = `https://feriasc.programatupotencial.com/images/${ParticipanteID.foto}`;
     }
 
     // Retorna un objeto FullParticipante con los datos mapeados desde el objeto ParticipanteIDParticipante
