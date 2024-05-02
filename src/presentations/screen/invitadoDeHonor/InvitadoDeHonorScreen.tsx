@@ -23,8 +23,8 @@ export const InvitadoDeHonorScreen = () => {
     // Renderiza la pantalla de detalles del participante
     return (
         <ScrollView style={globalStyles.container}>
-            <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
-                <Text>Invitado De Honor</Text>
+            <View style={[globalStyles.contentContainer, { marginBottom: "auto" }, { marginTop: "auto" }, { marginLeft: "auto" }, { marginRight: "auto" }]}>
+                <Text>AUN NO CONTAMOS CON UN INVITADO DE HONOR DISCULPE LAS MOLESTIAS</Text>
 
             </View>
         </ScrollView>

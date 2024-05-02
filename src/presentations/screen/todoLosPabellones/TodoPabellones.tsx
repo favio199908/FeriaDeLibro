@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import axios from 'axios';
+import { globalStyles } from '../../../theme/theme';
 
 interface Salon {
     id: number;
@@ -33,7 +34,7 @@ const TodoPabellones = () => {
 
     return (
         <ScrollView>
-            <View style={styles.container}>
+            <View style={[globalStyles.contentContainer, { marginBottom: "auto" }, { marginTop: "auto" }, { marginLeft: "auto" }, { marginRight: "auto" }]}>
                 <Text style={styles.heading}>Listado de Pabellones</Text>
                 {salones.map(salon => (
                     <View key={salon.id}>

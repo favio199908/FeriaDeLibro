@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View, Image } from "react-native";
 import { APosterCarusel } from "../../components/agendaFechas/APosterCarrusel";
 import { useAgenda } from "../../hooks/useAgenda";
 import { FullScreenLoader } from "../../components/loaders/FullScreenLoader";
@@ -22,8 +22,14 @@ export const ColombiaScreen = () => {
     // Renderiza la pantalla de detalles del participante
     return (
         <ScrollView style={globalStyles.container}>
-            <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
-                <Text>Pais Invitado</Text>
+            <View style={[globalStyles.contentContainer, { marginBottom: "auto" }, { marginTop: "auto" }, { marginLeft: "auto" }, { marginRight: "auto" }]}>
+                <Image source={require('../../../assets/colombia.png')} style={{
+                    marginTop: 20,
+                    width: 330,
+                    height: 80,
+                    borderRadius: 10,
+                    backgroundColor: "white"
+                }} />
             </View>
         </ScrollView>
     );

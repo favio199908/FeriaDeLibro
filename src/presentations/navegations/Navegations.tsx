@@ -37,7 +37,7 @@ export type RootStackParams = {
   Expositores: undefined;
   Mapa: undefined;
   Pabellones: undefined;
-  Camera: { Pabellones }
+  Camera: { Pabellones };
   SalonesPorFecha: undefined;
   Salones: undefined;
   Patrocinador: undefined;

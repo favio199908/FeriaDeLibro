@@ -60,7 +60,7 @@ export const PabellonesScreen = () => {
 
   return (
     <ScrollView style={globalStyles.container}>
-      <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
+      <View style={[globalStyles.contentContainer, { marginBottom: "auto" }, { marginTop: "auto" }, { marginLeft: "auto" }, { marginRight: "auto" }]}>
         <Text style={styles.label}>Selecciona una fecha:</Text>
         <Button title="Abrir selector de fecha" onPress={showDatePicker} />
         {isDatePickerVisible && (

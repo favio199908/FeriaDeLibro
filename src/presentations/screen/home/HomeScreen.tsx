@@ -28,10 +28,13 @@ export const HomeScreen = () => {
     <ScrollView style={globalStyles.container}>
 
       <View style={[globalStyles.contentContainer, { marginTop: top }]}>
-        <Image source={require('../../../assets/logoferi.png')} style={{
+        <Image source={require('../../../assets/ferialogof.png')} style={{
+
           width: 330,
-          height: 450,
-          borderRadius: 40
+          height: 300,
+
+
+
         }} />
         <ScrollView style={globalStyles.container}>
           <View style={[globalStyles.gridContainer, { marginTop: top }]}>
