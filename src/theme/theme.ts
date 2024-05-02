@@ -18,7 +18,7 @@ export const globalStyles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 40,
-    backgroundColor: "lightgray", // Puedes cambiar el color del círculo aquí
+    backgroundColor: "#F2A71B", // Puedes cambiar el color del círculo aquí
     marginBottom: 10,
   },
 

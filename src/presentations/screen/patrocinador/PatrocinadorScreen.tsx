@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View, Image } from "react-native";
 import { APosterCarusel } from "../../components/agendaFechas/APosterCarrusel";
 import { useAgenda } from "../../hooks/useAgenda";
 import { FullScreenLoader } from "../../components/loaders/FullScreenLoader";
@@ -25,7 +25,13 @@ export const PatrocinadorScreen = () => {
     return (
         <ScrollView style={globalStyles.container}>
             <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
-                <Text> Patrocinador</Text>
+
+                <Image source={require('../../../assets/LOGOKIAfondoblanco.png')} style={{
+                    width: 330,
+                    height: 300,
+                    borderRadius: 150
+                }} />
+
 
             </View>
         </ScrollView>

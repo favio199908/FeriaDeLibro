@@ -28,7 +28,11 @@ export const HomeScreen = () => {
     <ScrollView style={globalStyles.container}>
 
       <View style={[globalStyles.contentContainer, { marginTop: top }]}>
-        <Image source={require('../../../assets/logo.png')} style={globalStyles.icon} />
+        <Image source={require('../../../assets/logoferi.png')} style={{
+          width: 330,
+          height: 450,
+          borderRadius: 40
+        }} />
         <ScrollView style={globalStyles.container}>
           <View style={[globalStyles.gridContainer, { marginTop: top }]}>
             {/* 9 Pressables con iconos */}

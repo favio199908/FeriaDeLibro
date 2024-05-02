@@ -54,11 +54,10 @@ export const SalonesScreen = () => {
         <View style={[globalStyles.container]}>
 
             <View style={styles.form}><Pressable onPress={showDatePicker} style={globalStyles.iconContainer}>
-                <View style={globalStyles.iconCircle}>
-                    <Ionicons name="today-outline" size={30} color="blue" />
 
-                </View>
-                <Text style={globalStyles.buttonText}>Selciona una fecha</Text>
+                <Ionicons name="today-outline" size={40} color="black" />
+
+                <Text style={{ color: "black", fontSize: 12, }}>Selecciona una fecha</Text>
             </Pressable>
 
 
@@ -119,28 +118,38 @@ export const SalonesScreen = () => {
 const styles = StyleSheet.create({
     container: {
         marginTop: 20,
+
+
     },
     form: {
         marginBottom: 20,
+        borderRadius: 20,
+        backgroundColor: "#F2A71B"
+
     },
     label: {
         fontSize: 16,
         marginBottom: 5,
+        borderRadius: 20,
+        backgroundColor: "#F2A71B"
     },
     picker: {
         height: 100,
         width: 320,
-        marginBottom: 10,
+        marginBottom: 10
     },
     itemContainer: {
         marginBottom: 10,
         padding: 10,
         borderWidth: 1,
         borderColor: '#ccc',
-        borderRadius: 5
+        borderRadius: 5,
+        backgroundColor: "#F2A71B"
     },
     title: {
         fontWeight: 'bold',
-        marginBottom: 5
+        marginBottom: 5,
+        borderRadius: 20,
+
     }
 });

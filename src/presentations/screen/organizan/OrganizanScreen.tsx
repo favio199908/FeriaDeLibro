@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View, Image } from "react-native";
 
 import { FullScreenLoader } from "../../components/loaders/FullScreenLoader";
 import { useApi } from "../../hooks/useApi";
@@ -24,7 +24,32 @@ export const OrganizanScreen = () => {
     return (
         <ScrollView style={globalStyles.container}>
             <View style={[globalStyles.contentContainer, { marginTop: top + 20 }]}>
-                <Text>Organizan</Text>
+                <Image source={require('../../../assets/camaradepartamental.png')} style={{
+                    width: 330,
+                    height: 120,
+                    borderRadius: 10
+                }} />
+                <Image source={require('../../../assets/feriainternacional.png')} style={{
+                    marginTop: 20,
+                    width: 330,
+                    height: 152,
+                    borderRadius: 10
+                }} />
+                <Image source={require('../../../assets/logomunicipiosantacruz.png')} style={{
+                    marginTop: 20,
+                    width: 330,
+                    height: 152,
+                    borderRadius: 10,
+                    backgroundColor: "white"
+                }} />
+                <Image source={require('../../../assets/logo2024.png')} style={{
+                    marginTop: 20,
+                    width: 330,
+                    height: 190,
+                    borderRadius: 10,
+                    backgroundColor: "white"
+                }} />
+
 
             </View>
         </ScrollView>
