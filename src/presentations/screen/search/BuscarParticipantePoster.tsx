@@ -72,6 +72,6 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 12,
     fontWeight: "bold",
-    color: "#F2A71B",
+    color: "#ffff",
   },
 });

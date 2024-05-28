@@ -3,8 +3,6 @@ import { Text, View, StyleSheet, Button } from 'react-native';
 import { Camera } from 'expo-camera';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
 export default function CameraScreen({ route, navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
@@ -19,21 +17,33 @@ export default function CameraScreen({ route, navigation }) {
   const handleBarCodeScanned = async ({ data }) => {
     setScanned(true);
     const { pabellones } = route.params;
-    const pabellonEncontrado = pabellones.find(pabellon => pabellon.frase === data);
-    if (pabellonEncontrado) {
+
+    // Verificar si el código QR ya ha sido utilizado para desbloquear un pabellón
+    const codigoYaUsado = pabellones.some(pabellon => pabellon.frase === data);
+
+    if (codigoYaUsado) {
+      alert('Este código QR ya ha sido utilizado para desbloquear un pabellón.');
+      setScanned(false); // Permitir escanear otro código QR
+      return;
+    }
+
+    // Buscar el primer pabellón no desbloqueado
+    const pabellonDesbloqueado = pabellones.find(pabellon => !pabellon.desbloqueado);
+
+    if (pabellonDesbloqueado) {
       const nuevosPabellones = pabellones.map(pabellon => {
-        if (pabellon.id === pabellonEncontrado.id) {
-          return { ...pabellon, desbloqueado: true };
+        if (pabellon.id === pabellonDesbloqueado.id) {
+          return { ...pabellon, desbloqueado: true, frase: data };
         }
         return pabellon;
       });
       await AsyncStorage.setItem('pabellones', JSON.stringify(nuevosPabellones));
       navigation.replace('Pabellones', { pabellones: nuevosPabellones });
     } else {
-      alert('El código QR no coincide con ninguna frase de pabellón.');
+      alert('Todos los pabellones ya están desbloqueados.');
     }
   };
-  
+
   if (hasPermission === null) {
     return <Text style={styles.permissionText}>Solicitando permiso para la cámara</Text>;
   }
@@ -47,6 +57,9 @@ export default function CameraScreen({ route, navigation }) {
         style={styles.camera}
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
       />
+      {scanned && (
+        <Button title="Escanear otro QR" onPress={() => setScanned(false)} />
+      )}
     </View>
   );
 }

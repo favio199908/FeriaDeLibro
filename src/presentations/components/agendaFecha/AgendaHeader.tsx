@@ -1,6 +1,7 @@
 // Importa los componentes y hooks necesarios de react-native y react-navigation
 import { StyleSheet, Text, View } from "react-native";
 
+
 // Define una interfaz Props para especificar las propiedades esperadas por el componente
 interface Props {
   fecha: string; // Propiedad obligatoria que representa el nombre del participante
@@ -11,7 +12,7 @@ export const AgendaHeader = ({ fecha }: Props) => {
   return (
     <>
       <View>
-        <Text style={styles.title}>Para la fecha : {fecha}</Text>
+        <Text style={styles.title}>Fecha : {fecha}</Text>
       </View>
     </>
   );
@@ -26,5 +27,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
+    color: "white"
+
   },
 });

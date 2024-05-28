@@ -33,12 +33,12 @@ const SalonComponent = () => {
     return (
         <ScrollView>
             <View style={[globalStyles.contentContainer, { marginBottom: "auto" }, { marginTop: "auto" }, { marginLeft: "auto" }, { marginRight: "auto" }]}>
-                <Text style={styles.heading}>Listado de Salones</Text>
+                <Text style={styles.heading}>Salón</Text>
                 <View>
                     {salones.map(salon => (
                         <View key={salon.id}>
                             <Text style={styles.name}>{salon.nombre}</Text>
-                            <Text><Text style={styles.label}>Descripción:</Text> {salon.descripcion}</Text>
+                            <Text style={styles.label}>{salon.descripcion}</Text>
                             <View style={styles.imageContainers}>
                                 <Image
                                     style={styles.images}
@@ -50,7 +50,7 @@ const SalonComponent = () => {
                                 />
                             </View>
 
-                            <View style={styles.imageContainers}>
+                            {/*} <View style={styles.imageContainers}>
                                 <Image
                                     style={styles.images}
                                     source={{
@@ -59,8 +59,8 @@ const SalonComponent = () => {
                                             : "https://feriasc.programatupotencial.com/Logotipos/user.png",
                                     }}
                                 />
-                            </View>
-                            <Text><Text style={styles.label}>Tipo:</Text> {salon.tipo}</Text>
+                                </View>*/}
+
 
                             <View style={styles.divider} />
                         </View>

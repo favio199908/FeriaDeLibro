@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const globalColors = {
-  primary: "#F2A71B",
+  primary: "#ffff",
   secondary: "#f72585",
   tertiary: "#3a0ca3",
   success: "#4cc9f0",
@@ -18,7 +18,7 @@ export const globalStyles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 40,
-    backgroundColor: "#F2A71B", // Puedes cambiar el color del círculo aquí
+    backgroundColor: "white", // Puedes cambiar el color del círculo aquí
     marginBottom: 10,
   },
 

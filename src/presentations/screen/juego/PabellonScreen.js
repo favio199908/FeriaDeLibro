@@ -2,22 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Button, ScrollView, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
-
 const PABELLONES_INICIALES = [
-  { id: 1, desbloqueado: false, frase: "Frase del pabellón 1", imagen: require('./img/brasil.png') },
-  { id: 2, desbloqueado: false, frase: "Frase del pabellón 2", imagen: require('./img/brasil.png') },
-  { id: 3, desbloqueado: false, frase: "Frase del pabellón 3", imagen: require('./img/brasil.png') },
-  { id: 4, desbloqueado: false, frase: "Frase del pabellón 4", imagen: require('./img/brasil.png') },
-  { id: 5, desbloqueado: false, frase: "Frase del pabellón 5", imagen: require('./img/brasil.png') },
-  { id: 6, desbloqueado: false, frase: "Frase del pabellón 6", imagen: require('./img/brasil.png') },
+  { id: 1, desbloqueado: false, frase: "", imagen: require('./img/icon.png') },
+  { id: 2, desbloqueado: false, frase: "", imagen: require('./img/icon.png') },
+  { id: 3, desbloqueado: false, frase: "", imagen: require('./img/icon.png') },
+  { id: 4, desbloqueado: false, frase: "", imagen: require('./img/icon.png') },
+  { id: 5, desbloqueado: false, frase: "", imagen: require('./img/icon.png') },
+  { id: 6, desbloqueado: false, frase: "", imagen: require('./img/icon.png') },
 ];
+  
 
 const Pabellon = ({ id, desbloqueado, frase, imagen }) => (
   <View style={styles.pabellon}>
     <Image source={imagen} style={[styles.imagen, { opacity: desbloqueado ? 1 : 0.5 }]} />
-    <Text style={styles.title}>{`Pabellón ${id}: ${desbloqueado ? 'Desbloqueado' : 'Bloqueado'}`}</Text>
+    <Text style={styles.title}>{`nivel ${id} : ${desbloqueado ? 'Desbloqueado' : 'Bloqueado'}`}</Text>
     {desbloqueado && <Text style={styles.frase}>{frase}</Text>}
   </View>
 );
@@ -53,6 +51,10 @@ export default function PabellonesScreen({ navigation, route }) {
         {pabellones.map(pabellon => (
           <Pabellon key={pabellon.id} {...pabellon} />
         ))}
+     
+      <View style={styles.buttonContainer}>
+        
+      </View>
       </ScrollView>
       <View style={styles.buttonContainer}>
         <Button title="Desbloquear pabellones" onPress={desbloquearPabellon} />
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     backgroundColor: '#fff',
-    width: '45%', // Adjust the width as needed
+    width: '45%',
     alignItems: 'center',
   },
   title: {

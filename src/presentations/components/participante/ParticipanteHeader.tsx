@@ -19,7 +19,11 @@ interface Props {
 // Define un componente funcional ParticipanteHeader que muestra el encabezado de un participante
 export const ParticipanteHeader = ({ foto, nombre, profesion }: Props) => {
   // Obtiene la altura de la ventana actual
-  const { height: screenHeight } = useWindowDimensions();
+  const { height: screenHeight, width: screenWidth } = useWindowDimensions();
+
+  // Calcula la altura de la imagen manteniendo la relación de aspecto original
+  const imageHeight = screenHeight * 0.7;
+  const imageWidth = screenWidth;
   // Obtiene el objeto de navegación
   const navigation = useNavigation();
 
@@ -31,17 +35,21 @@ export const ParticipanteHeader = ({ foto, nombre, profesion }: Props) => {
         <View style={styles.imageBorder}>
           {/* Imagen del participante */}
           <Image
-            style={styles.posterImage}
+            style={{ ...styles.posterImage, height: imageHeight, width: imageWidth }}
             source={{
               uri: foto
                 ? foto
                 : "https://feriasc.programatupotencial.com/Logotipos/user.png",
             }}
+            resizeMode="contain"
           />
         </View>
       </View>
       {/* Contenedor del texto y botón de regreso */}
       <View style={styles.marginContainer}>
+        <Text style={{ fontSize: 23, marginTop: 10, fontWeight: "bold", color: "#F2A71B" }}>
+          Participante
+        </Text>
         {/* Nombre del participante */}
         <Text style={styles.subTitle}>{nombre}</Text>
         {/* Profesión del participante (si está disponible) */}
@@ -74,6 +82,8 @@ const styles = StyleSheet.create({
   },
   posterImage: {
     flex: 1,
+    height: 100,
+
   },
   marginContainer: {
     marginHorizontal: 20,

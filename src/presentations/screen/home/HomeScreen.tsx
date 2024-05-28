@@ -28,10 +28,10 @@ export const HomeScreen = () => {
     <ScrollView style={globalStyles.container}>
 
       <View style={[globalStyles.contentContainer, { marginTop: top }]}>
-        <Image source={require('../../../assets/ferialogof.png')} style={{
+        <Image source={require('../../../assets/Capa0.png')} style={{
 
           width: 330,
-          height: 300,
+          height: 120,
 
 
 
@@ -103,10 +103,10 @@ export const HomeScreen = () => {
 
             } style={globalStyles.iconContainer}>
               <View style={globalStyles.iconCircle}>
-                <Ionicons name="business-outline" size={30} color="black" />
+                <Ionicons name="diamond-outline" size={30} color="black" />
 
               </View>
-              <Text style={globalStyles.buttonText}>Buscar Salones</Text>
+              <Text style={globalStyles.buttonText}>Premio Anual Cámara del Libro</Text>
             </Pressable>
             <Pressable onPress={() => navigation.navigate("Salones")
 
@@ -116,6 +116,16 @@ export const HomeScreen = () => {
 
               </View>
               <Text style={globalStyles.buttonText}>Salones</Text>
+            </Pressable>
+
+            <Pressable onPress={() => navigation.navigate("HorariosPrecios")
+
+            } style={globalStyles.iconContainer}>
+              <View style={globalStyles.iconCircle}>
+                <Ionicons name="bag-handle-outline" size={30} color="black" />
+
+              </View>
+              <Text style={globalStyles.buttonText}>Horarios de atencion y precios de entradas</Text>
             </Pressable>
           </View>
         </ScrollView>

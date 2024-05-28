@@ -35,10 +35,10 @@ const TodoPabellones = () => {
     return (
         <ScrollView>
             <View style={[globalStyles.contentContainer, { marginBottom: "auto" }, { marginTop: "auto" }, { marginLeft: "auto" }, { marginRight: "auto" }]}>
-                <Text style={styles.heading}>Listado de Pabellones</Text>
+                <Text style={styles.heading}>Pabellón</Text>
                 {salones.map(salon => (
                     <View key={salon.id}>
-                        <Text style={styles.name}>{salon.nombre}</Text>
+                        <Text style={styles.name}>Pabellón: {salon.nombre}</Text>
                         <Text style={styles.label}>{salon.descripcion}</Text>
                         <View style={styles.imageContainers}>
                             <Image
@@ -51,8 +51,8 @@ const TodoPabellones = () => {
                             />
                         </View>
 
-                        <View style={styles.imageContainers}>
-                            <Image
+                        {/*   <View style={styles.imageContainers}>
+                            <Image 
                                 style={styles.images}
                                 source={{
                                     uri: salon.plano
@@ -60,7 +60,7 @@ const TodoPabellones = () => {
                                         : "https://feriasc.programatupotencial.com/Logotipos/user.png",
                                 }}
                             />
-                        </View>
+                            </View>*/}
 
 
                         <View style={styles.divider} />

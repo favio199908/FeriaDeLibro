@@ -59,6 +59,7 @@ export const ExpositorDPoster = ({
 const styles = StyleSheet.create({
     imageContainers: {
         marginRight: 10,
+
     },
     images: {
 
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         backgroundColor: "lightgray", // Puedes cambiar el color del círculo aquí
         marginBottom: 10,
+
     },
     image: {
         color: "white",
@@ -76,10 +78,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold", // Negrita para mayor énfasis
         textAlign: "center", // Centra el texto horizontalmente
         marginBottom: 5, // Espacio entre el mes y la fecha
+
     },
     imagecontainer: {
-        flex: 1,
-        borderRadius: 10,
+        height: 170,
+        borderRadius: 23,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -89,6 +92,7 @@ const styles = StyleSheet.create({
         shadowRadius: 7,
         elevation: 9,
         backgroundColor: "#41C9E2", // Cambia el color de fondo de la imagen
+
     },
     textContainertop: {
         position: "relative",
@@ -100,6 +104,7 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         borderTopStartRadius: 30,
         borderTopEndRadius: 30,
+
     },
     textContainer: {
         position: "absolute",
@@ -109,15 +114,15 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(0, 141, 218, 0.7)", // Cambia el color de fondo del texto
         paddingHorizontal: 10,
         paddingVertical: 5,
-        borderBottomEndRadius: 18,
-        borderBottomStartRadius: 18,
+        borderBottomEndRadius: 22,
+        borderBottomStartRadius: 22,
     },
     monthText: {
         color: "white",
         fontSize: 5, // Tamaño grande para resaltar el mes
         fontWeight: "bold", // Negrita para mayor énfasis
         textAlign: "center", // Centra el texto horizontalmente
-        marginBottom: 5, // Espacio entre el mes y la fecha
+        marginBottom: 10, // Espacio entre el mes y la fecha
     },
     dateText: {
         color: "white",
